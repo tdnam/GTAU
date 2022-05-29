@@ -1,0 +1,5 @@
+DEV:
+  browser: "chrome"
+  url: "https://gumtree.com.au"
+  implicit_wait_secs: 5
+  explicit_wait_secs: 10

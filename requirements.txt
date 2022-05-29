@@ -1,0 +1,9 @@
+behave==1.2.6
+configparser==4.0.2
+parse==1.19.0
+parse-type==0.6.0
+pathlib2==2.3.5
+python-dateutil==2.8.1
+PyYAML==5.4.1
+requests==2.20.1
+selenium==3.141.0
