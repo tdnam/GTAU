@@ -11,5 +11,3 @@ Feature:  Searching function
         Examples:
             | search_keyword        | search_category        | search_distance | search_area        |
             | Sennheiser Headphones | Electronics & Computer | 20km            | Sydney Region, NSW |
-
-

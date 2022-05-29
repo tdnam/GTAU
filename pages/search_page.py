@@ -6,7 +6,7 @@ from objects.locator import GenericObject, SearchPage, AdDetailsPage
 
 def navigate_to_url(url):
     driver.navigate(url)
-
+    
 
 def search_for(search_keyword, search_category, search_distance, search_area):
     #keyword
@@ -43,22 +43,19 @@ def verify_details_page_open_after_search():
         for i in range(1, number_of_attribute_items+1):
             ui_add_attribute = common.get_element_value(AdDetailsPage.ad_attribute_item, str(i))
             if ui_add_attribute not in expected_attrubute_items:
-                print("ERROR: {0} is not in the attribute items".format(ui_add_attribute))
-                raise
+                raise Exception("ERROR: {0} is not in the attribute items".format(ui_add_attribute))         
     else:
-        print("ERROR: ad details page seems not open correctly")
-        raise
+        raise Exception("ERROR: ad details page seems not open correctly")
+        
 
 
 def verify_numeric_ad_id_and_similar_ad():
     ad_id = common.get_element_value(AdDetailsPage.ad_id)
     ad_id = ad_id.replace("Ad ID ", "")
     if not ad_id.isnumeric():
-        print("ERROR: Ad id {0} is not numberic or not found!".format(ad_id))
-        raise
+        raise Exception("ERROR: Ad id {0} is not numberic or not found!".format(ad_id))
 
     #Similar ad
     number_of_similar_ads = common.count_all_elements(AdDetailsPage.similar_ads)
     if int(number_of_similar_ads) < 1:
-        print("ERROR: The number of similar ads is {0}. There should be at least 1 similar ad displayed".format(number_of_similar_ads))
-    
+        raise Exception("ERROR: The number of similar ads is {0}. There should be at least 1 similar ad displayed".format(number_of_similar_ads))
